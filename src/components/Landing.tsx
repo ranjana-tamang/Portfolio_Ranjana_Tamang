@@ -1,8 +1,8 @@
-import Image from "next/image";
-import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import WavingHand from "./WavingHand";
+import Image from "next/image";
+import { useEffect, useState } from "react";
 import GlowFlies from "./GlowFlies";
+import WavingHand from "./WavingHand";
 
 const Landing = () => {
   const [mouse, setMouse] = useState({ x: 0, y: 0 });
@@ -22,12 +22,12 @@ const Landing = () => {
       <div className=" ">
         <div className="flex gap-4 items-center justify-center  w-[75%] md:w-[90%] mx-auto">
           <WavingHand />
-          <h1 className="text-[clamp(1rem,3vw,1.75rem)] text-white  ">
-            My name is Ranjana Tamang a Frontend Developer.
+          <h1 className="text-[clamp(1rem,3vw,8rem)] font-bold text-white  ">
+            This is Ranjana Tamang
           </h1>
         </div>
       </div>
-      <section className="relative   flex   justify-center overflow-hidden   text-white">
+      <section className="relative -mt-20  flex   justify-center overflow-hidden   text-white">
         <motion.h1
           style={{
             transform: `translate(${mouse.x * -0.02}px, ${mouse.y * -0.02}px)`,
@@ -44,11 +44,12 @@ const Landing = () => {
             <GlowFlies />
           </div>
           <Image
-            src="/maam.webp"
+            // src="/maam.webp"
+            src="/my-img-no-bg.png"
             alt="hero"
             width={1000}
             height={1000}
-            className="relative z-10 w-60 md:w-180 mt-12"
+            className="relative z-10 w-90 md:w-180 h-90 md:h-180 -mt-16 object-contain"
           />
           <div className="absolute inset-y-0 left-1/2 -translate-x-1/2  w-full z-10">
             <GlowFlies />
@@ -61,7 +62,8 @@ const Landing = () => {
           }}
           className="absolute z-20 h-[90%]   font-bold flex items-end    "
         >
-          <span className="text-[clamp(2.5rem,12vw,10rem)] whitespace-nowrap">
+          {/* <span className="text-[clamp(2.5rem,12vw,10rem)] whitespace-nowrap"> */}
+          <span className="uppercase text-transparent [-webkit-text-stroke:4px_white] text-[clamp(3.5rem,16vw,12rem)] opacity-100">
             FRONTEND
           </span>
         </motion.h1>
