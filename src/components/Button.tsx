@@ -1,31 +1,21 @@
 import { ArrowRight } from "iconsax-reactjs";
+import { cn } from "./lib/utils";
 
 interface buttonType {
   text: string;
   link?: string;
+  ButtonClassName?: string;
 }
 
-const Button = ({ text, link = "" }: buttonType) => {
+const Button = ({ ButtonClassName, text, link = "" }: buttonType) => {
   return (
     <div className="relative overflow-hidden px-1  w-fit      h-15 flex items-center  rounded-full ">
       <div className="   z-10">
         <button
-          className="
-      blur-none
-        group cursor-pointer 
-        flex items-center gap-2
-        rounded-full
-        px-6 py-3 sm:px-7 sm:py-4
-        text-white font-medium
-        bg-background
-        my-4 md:my-8
-
-        transition-all duration-300 ease-out
-        active:scale-95
-
-        shadow-[inset_0_0_18px_rgba(180,180,180,0.35)]
-        hover:shadow-[inset_0_0_12px_rgba(19,253,253,0.45)]
-      "
+          className={cn(
+            "blur-none group cursor-pointer flex items-center gap-2 rounded-full px-6 py-3 sm:px-7 sm:py-4 text-white font-medium bg-background my-4 md:my-8 transition-all duration-300 ease-out active:scale-95 shadow-[inset_0_0_18px_rgba(180,180,180,0.35)] hover:shadow-[inset_0_0_12px_rgba(19,253,253,0.45)]",
+            ButtonClassName,
+          )}
         >
           <span
             className="

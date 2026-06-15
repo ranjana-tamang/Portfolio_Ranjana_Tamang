@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import { twMerge } from "tailwind-merge";
+import { cn } from "./lib/utils";
 
 type SmallCardProps = {
   title?: string;
@@ -7,18 +8,20 @@ type SmallCardProps = {
   hoverBg?: boolean;
   icon?: ReactNode;
   icontype?: "image" | "icon";
-  larzeIcon?: boolean
+  largeIcon?: boolean;
+  CircleClassName?: string;
 };
 const SmallCard = ({
   title = "",
   content = "",
   hoverBg = false,
+  CircleClassName = "",
   icon,
   icontype,
-  larzeIcon = false
+  largeIcon = false,
 }: SmallCardProps) => {
   return (
-    <div className="group relative   rounded-xl p-[2px]">
+    <div className="group relative w-full h-full rounded-xl p-[2px]">
       {/*  */}
       <div
         className="
@@ -31,21 +34,23 @@ const SmallCard = ({
 
       <div className="relative z-10 h-full w-full rounded-[10px] bg-cardbg p-4 sm:p-6 lg:p-8 overflow-hidden">
         <div className="    ">
-          <div className={`${larzeIcon ? 'flex flex-col gap-4  text-left mb-4' : 'flex flex-wrap gap-4 items-center mb-4'}`}>
+          <div
+            className={`${largeIcon ? "flex flex-col gap-4  text-left mb-4" : "flex flex-wrap gap-4 items-center mb-4"}`}
+          >
             <div
-              className={`mb-2 shadow-[0_0_8px_8px_rgba(19,253,253,0.11)] border-2 border-foreground rounded-full h-12 w-12 flex items-center justify-center
-              ${icontype === "image"
-                  ? "    bg-background "
-                  : "  text-white  bg-foreground "
-                }
-                ${larzeIcon ? 'block h-18 w-18 ' : ''}  
-                `}
+              className={cn(
+                "mb-2 shadow-[0_0_8px_8px_rgba(19,253,253,0.11)]  rounded-full h-12 w-12 flex items-center justify-center",
+                icontype === "image"
+                  ? "text-white bg-foreground border-2 border-foreground"
+                  : CircleClassName,
+                largeIcon ? "h-18 w-18" : "",
+              )}
             >
               {icon}
             </div>
-            <h1 className="subHeading">{title}</h1>
+            <h1 className="subHeading wrap-break-word">{title}</h1>
           </div>
-          <div className="contextText text-left">{content}</div>
+          <div className="contextText text-left wrap-break-word">{content}</div>
         </div>
         {hoverBg && (
           <div

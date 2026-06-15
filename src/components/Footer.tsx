@@ -1,11 +1,11 @@
-import React from 'react'
+import React from "react";
 
 const Footer = () => {
-    return (
-        <div className='  py-4 text-center bg-cardbg'>
-            © 2026 Marketify Inc. All Rights Reserved.
-        </div>
-    )
-}
+  return (
+    <div className="  py-4 text-center bg-cardbg">
+      © 2026 ranjanatamang. All Rights Reserved.
+    </div>
+  );
+};
 
-export default Footer
+export default Footer;

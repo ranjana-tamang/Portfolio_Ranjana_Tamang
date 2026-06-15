@@ -5,33 +5,38 @@ import CountCard from "./CountCard";
 
 const AboutMe = () => {
   return (
-    <div className="container_my mainTopBottomPadding" id='about'>
+    <div className="container_my mainTopBottomPadding" id="about">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 lg:gap-12 items-center">
         <div className="flex-1 ">
           <div className="mb-4 sm:mb-6 lg:mb-8">
-            <h1 className="topSubHeading">About Me</h1>
-            <h1 className="heading">
-              Boost Business Strategic Solutions with Us
+            <h1 className="heading1">About Me</h1>
+            <h1 className="heading2">
+              {/* Boost Business Strategic Solutions with Us */}
             </h1>
-            <h3 className="contextText">
-              Business consulting consultants provide expert advice and guida
-              businesses to help them improve their performance, efficiency, and
-              organizational
-            </h3>
+            <h4 className="contextText">
+              I am a Frontend Developer specializing in React.js. I build
+              responsive, user-friendly web applications with clean and
+              efficient code. I am passionate about creating smooth user
+              experiences and continuously improving my development skills.
+            </h4>
           </div>
-          <div className="flex gap-4 flex-wrap md:flex-nowrap">
+          {/* <div className="flex gap-4 flex-wrap md:flex-nowrap"> */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <SmallCard
-              title="With hover bg"
+              title="React Developer"
               content="Business consulting consultants provide expert advice."
+              hoverBg={true}
+              icon={<img src="/React-Logo-PNG-Images.webp" />}
+              icontype="icon"
+              CircleClassName="bg-none"
+            />
+            <SmallCard
+              title="Responsive Design"
+              content="Creating mobile-first, responsive layouts that deliver seamless experiences across all devices."
               hoverBg={true}
               icon={<Aave size="32" />}
               icontype="icon"
-            />
-            <SmallCard
-              title="No hover bg"
-              content="Business consulting consultants provide expert advice."
-              icon={<Aave size="32" />}
-              icontype="icon"
+              CircleClassName="bg-none"
             />
           </div>
           <div className="my-4">
@@ -40,10 +45,9 @@ const AboutMe = () => {
         </div>
         <div className="flex w-full items-center  h-full ">
           <div className="grid grid-cols-1 md:cgrid-cols-1 lg:grid-cols-2 gap-4 md:gap-8   w-full">
-            <CountCard number={120} type="+" content="Our Project Complete" />
-            <CountCard number={12} type="+" content="Our Project Complete" />
-            <CountCard number={20} type="+" content="Our Project Complete" />
-            <CountCard number={70} type="+" content="Our Project Complete" />
+            <CountCard number={5} type="+" content="Project Completed" />
+            <CountCard number={10} type="+" content="Technology Used" />
+            <CountCard number={100} type="%" content="Commitment to Quality" />
           </div>
         </div>
       </div>
